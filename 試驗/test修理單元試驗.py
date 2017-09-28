@@ -86,3 +86,15 @@ class 修理試驗(TestCase):
 <Speaker id="spk3" name="三哥" check="no" dialect="native" accent="" scope="local"/>
 '''.split('\n'),
         )
+
+    def test_換逝留咧(self):
+        原本 = [
+            '<?xml version="1.0" encoding="UTF-8"?>\r\n'
+        ]
+        害去 = [
+            '<?xml version="1.0" encoding="UTF-8"?>'
+        ]
+        self.assertEqual(
+            修理().取代(原本, 害去),
+            原本,
+        )
